@@ -1,20 +1,23 @@
 # Use PHP 8.2 with Apache
 FROM php:8.2-apache
 
-# Enable mod_rewrite (needed for some routing or clean URLs)
+# Enable Apache modules
 RUN a2enmod rewrite
-
-# Copy all your project files into the Apache root
-COPY . /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html/
 
-# Give necessary permissions (optional but helpful)
+# Copy all project files to the Apache root
+COPY . .
+
+# Set proper ownership and permissions (optional but recommended)
 RUN chown -R www-data:www-data /var/www/html
 
-# Install PHP extensions if needed (e.g., mysqli, gd, etc.)
+# Install required PHP extensions
 RUN docker-php-ext-install mysqli
 
-# Expose port 80
+# Optional: Enable error reporting during development
+# RUN echo "display_errors = On\nerror_reporting = E_ALL" > /usr/local/etc/php/conf.d/dev.ini
+
+# Expose port 80 to allow traffic in
 EXPOSE 80
