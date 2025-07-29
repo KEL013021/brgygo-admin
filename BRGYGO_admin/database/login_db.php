@@ -3,12 +3,9 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $gmail = $_POST['email'];
     $password = $_POST['password'];
-
-    $conn = new mysqli("localhost", "root", "", "brygo");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+    
+include("connection.php");
+    
     $stmt = $conn->prepare("SELECT user_id, gmail, password, status FROM user WHERE gmail = ?");
     $stmt->bind_param("s", $gmail);
     $stmt->execute();
