@@ -23,6 +23,7 @@ include("connection.php");
             if ($status === 'admin') {
                 echo "Redirecting to admin dashboard...";
                 header("Location: ../section/dashboard.php");
+                exit();
             } else {
                 echo "Redirecting to user dashboard...";
                 // header("Location: user_dashboard.php");
