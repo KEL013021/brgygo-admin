@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="../bootstrap5/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/Login.css" />
   <title>BRGY GO</title>
 </head>
 <body>
