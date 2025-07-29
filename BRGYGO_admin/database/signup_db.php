@@ -1,4 +1,5 @@
 <?php
+include('connection.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $gmail = $_POST['email'];
     $password = $_POST['password'];
@@ -11,11 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    $conn = new mysqli("localhost", "root", "", "brygo");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $check = $conn->prepare("SELECT gmail FROM user WHERE gmail = ?");
     $check->bind_param("s", $gmail);
