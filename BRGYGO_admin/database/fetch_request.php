@@ -1,5 +1,5 @@
 <?php
-include('../database/connection.php');
+include('connection.php');
 
 $query = "SELECT 
             r.id,
