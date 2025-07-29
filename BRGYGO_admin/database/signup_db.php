@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $check->store_result();
 
     if ($check->num_rows > 0) {
-        header("Location: signup.php?msg=" . urlencode("Email is already registered."));
+        header("Location: ..section/Login.php?msg=" . urlencode("Email is already registered."));
         exit;
     }
 
@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ssis", $gmail, $hashedPassword, $toa, $status);
 
     if ($stmt->execute()) {
-        header("Location: signup.php?msg=" . urlencode("Signup successful!"));
+        header("Location: ..section/Login.php?msg=" . urlencode("Signup successful!"));
         exit;
     } else {
-        header("Location: signup.php?msg=" . urlencode("Error during signup: " . $stmt->error));
+        header("Location: ..section/Login.php?msg=" . urlencode("Error during signup: " . $stmt->error));
         exit;
     }
 
