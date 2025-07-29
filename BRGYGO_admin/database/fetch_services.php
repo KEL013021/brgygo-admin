@@ -1,5 +1,5 @@
 <?php
-include('../database/connection.php');
+include('connection.php');
 $data = [];
 
 $query = "SELECT id, service_name FROM services";
