@@ -1,12 +1,12 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = ''; // default XAMPP password
-$db = 'brygo'; // make sure your database name is correct
+$DB_HOST = getenv('DB_HOST');
+$DB_PORT = getenv('DB_PORT');
+$DB_USER = getenv('DB_USER');
+$DB_PASS = getenv('DB_PASS');
+$DB_NAME = getenv('DB_NAME');
 
-$conn = mysqli_connect($host, $user, $password, $db);
+$conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-?>
