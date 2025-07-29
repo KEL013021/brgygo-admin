@@ -1,4 +1,5 @@
-    <?php include('sidebar.php'); ?>
+    <?php include('sidebar.php'); 
+?>
 
     <link rel="stylesheet" type="text/css" href="../css/barangay_residents.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,7 +43,7 @@
         </thead>
         <tbody>
           <?php
-            include '../database/connection.php'; // Adjust path as needed
+            include('../database/connection.php'); // Adjust path as needed
 
             $sql = "SELECT id, image_url, first_name, middle_name, last_name, email_address, mobile_number, house_position, house_number FROM residents ORDER BY last_name ASC";
             $result = mysqli_query($conn, $sql);
