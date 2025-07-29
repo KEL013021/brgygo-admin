@@ -1,5 +1,5 @@
 <?php
-include('../database/connection.php');
+include('connection.php');
 $data = [];
 
 $query = "SELECT id, CONCAT(first_name, ' ', last_name) AS full_name, image_url FROM residents";
