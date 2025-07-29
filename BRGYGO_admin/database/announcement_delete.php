@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id'])) {
             echo "success";
         } else {
             http_response_code(500);
-            echo "Failed to delete announcement.";
+            //echo "Failed to delete announcement.";
         }
 
         $deleteStmt->close();
