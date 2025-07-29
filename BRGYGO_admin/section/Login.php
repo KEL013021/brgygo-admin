@@ -79,6 +79,22 @@
     </div>
   </div>
 
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedbackLabel">Signup Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php if (isset($_GET['msg'])): ?>
+          <?= htmlspecialchars($_GET['msg']) ?>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</div>
+	
   <script>
     const container = document.getElementById('container');
     document.getElementById('signUp').addEventListener('click', () => {
@@ -160,6 +176,10 @@
         e.preventDefault(); // Stop form from submitting
       }
     });
+	   document.addEventListener('DOMContentLoaded', function () {
+    var modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+    modal.show();
+  });
   </script>
 </body>
 </html>
